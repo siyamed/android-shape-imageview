@@ -1,0 +1,142 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/neo"
+                app:borderWidth="6dp"
+                app:borderColor="@color/darkgray"/>
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:radius="6dp"
+                app:borderWidth="6dp"
+                app:borderColor="@color/darkgray"
+                app:square="true"/>
+
+            <com.github.siyamed.shapeimageview.BubbleImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:square="true"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"/>
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="4dp"
+                app:borderColor="@color/darkgray"/>
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:layout_width="80dp"
+                android:layout_height="120dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="4dp"
+                app:borderColor="@color/darkgray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:radius="6dp"/>
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:radius="6dp"
+                app:borderWidth="6dp"
+                app:borderColor="@color/darkgray"/>
+
+            <com.github.siyamed.shapeimageview.RoundedImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:radius="6dp"
+                app:borderWidth="6dp"
+                app:borderColor="@color/darkgray"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.BubbleImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/neo"
+                app:triangleHeight="10dp"
+                android:layout_margin="8dp"/>
+
+            <com.github.siyamed.shapeimageview.BubbleImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:src="@drawable/neo"
+                app:triangleHeight="10dp"
+                android:layout_margin="8dp"/>
+
+            <com.github.siyamed.shapeimageview.BubbleImageView
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:src="@drawable/neo"
+                app:triangleHeight="10dp"
+                android:layout_margin="8dp"
+                app:arrowPosition="right"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

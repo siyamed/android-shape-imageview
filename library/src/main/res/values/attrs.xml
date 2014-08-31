@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <attr name="arrowPosition">
+        <enum name="left" value="0" />
+        <enum name="right" value="1" />
+    </attr>
+    <declare-styleable name="ShaderImageView">
+        <attr name="square" format="boolean" />
+        <attr name="borderColor" format="color" />
+        <attr name="borderWidth" format="dimension" />
+        <attr name="borderAlpha" format="float" />
+        <attr name="foreground" format="integer|reference" />
+        <!-- Rounded Image View -->
+        <attr name="radius" format="dimension" />
+        <!--BubbleImageView-->
+        <attr name="arrowPosition"/>
+        <attr name="triangleHeight" format="dimension"/>
+        <!--PortedImageView-->
+        <attr name="shape" format="integer|reference" />
+    </declare-styleable>
+</resources>

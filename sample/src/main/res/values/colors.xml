@@ -1,0 +1,10 @@
+<resources>
+    <color name="screen_bg">@color/white</color>
+    <color name="bordercolor">@color/darkgray</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#FFF</color>
+    <color name="darkgray">#666</color>
+    <color name="chat_box_border">#BBB</color>
+    <color name="chat_box_bg">#EEE</color>
+    <color name="green">#22AA22</color>
+</resources>

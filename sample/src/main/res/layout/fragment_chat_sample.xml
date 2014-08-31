@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SampleActivity"
+    android:background="@color/screen_bg"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbarStyle="outsideOverlay"
+        android:drawSelectorOnTop="true"
+        android:listSelector="#00000000"
+        android:divider="@null"
+        android:dividerHeight="0dp"
+        android:descendantFocusability="beforeDescendants"/>
+
+</FrameLayout>

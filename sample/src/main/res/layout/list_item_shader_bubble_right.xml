@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/chat_container">
+
+    <com.github.siyamed.shapeimageview.BubbleImageView
+        android:id="@+id/image"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        app:triangleHeight="8dp"
+        tools:src="@drawable/neo"
+        android:layout_alignParentRight="true"
+        app:arrowPosition="left"/>
+
+    <TextView
+        android:id="@+id/text"
+        style="@style/chat_msg"
+        tools:text="msg"
+        android:layout_marginRight="4dp"
+        android:layout_toLeftOf="@+id/image"/>
+
+</RelativeLayout>
