@@ -14,5 +14,5 @@ branches:
 notifications:
   email: false
 
-script: 'gradle build'
+script: './gradlew build'
 
