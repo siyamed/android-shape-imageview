@@ -1,5 +1,8 @@
-# Shape Image View
-Provides a set of custom shaped imageview components, and a framework to define more shapes. Implements both *shader* based and *bitmap mask* based image views. Shader based ones use *canvas draw methods* and *Path* construct, while bitmap mask uses xfremode to draw image on bitmaps defined by android shape XML's or resource bitmaps.
+# Shape Image View [![](https://travis-ci.org/siyamed/shape-imageview.svg?branch=master)](https://travis-ci.org/siyamed/shape-imageview/)
+Provides a set of custom shaped android imageview components, and a framework to define more shapes. Implements both **shader** and **bitmap mask** based image views. 
+
+* Shader based one uses *canvas draw methods* and *Path* construct, 
+* Mask based one uses xfermode to draw image on bitmaps defined by android shape XML's or resource bitmaps.
 
 <div>
 <a href="images/shader-buble.png" style="float:left;">
@@ -14,7 +17,13 @@ There are many projects online implementing such components, however one goal of
 
 **For use with recycling view such as ListView or GridView please use shader based implementations.**
 
-## Usage 
+## How to use
+
+Gradle dependency:
+```
+
+```
+
 ####BubbleImageView
 ![Android Bubble ImageView](images/small-bubble.png)
 ```XML
@@ -87,6 +96,10 @@ rounded rectangle shape definition in XML:
     <solid android:color="@color/black" />
 </shape>
 ```
+
+## Sample
+
+See/execute the [sample](sample) for a demonstration of the components.
 
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
