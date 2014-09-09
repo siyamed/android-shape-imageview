@@ -14,7 +14,13 @@ There are many projects online implementing such components, however one goal of
 
 **For use with recycling view such as ListView or GridView please use shader based implementations.**
 
-## Usage 
+## How to use
+
+Gradle dependency:
+```
+
+```
+
 ####BubbleImageView
 ![Android Bubble ImageView](images/small-bubble.png)
 ```XML
@@ -87,6 +93,10 @@ rounded rectangle shape definition in XML:
     <solid android:color="@color/black" />
 </shape>
 ```
+
+## Sample
+
+See/execute the [sample](sample) for a demonstration of the components.
 
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
