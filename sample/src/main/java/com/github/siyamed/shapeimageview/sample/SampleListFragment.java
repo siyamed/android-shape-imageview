@@ -1,6 +1,5 @@
-package com.github.siyamed.shapeimageview;
+package com.github.siyamed.shapeimageview.sample;
 
-import android.com.ext.circular_imageview.R;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
