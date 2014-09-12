@@ -14,8 +14,6 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 
-import ext.com.android.R;
-
 public abstract class ShaderHelper {
     private static int ALPHA_MAX = 255;
 
