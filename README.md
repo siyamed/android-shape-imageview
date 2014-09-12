@@ -20,8 +20,8 @@ There are many projects online implementing such components, however one goal of
 ## How to use
 
 Gradle dependency:
-```
-
+```Groovy
+compile 'com.github.siyamed:android-shape-imageview:0.9@aar'
 ```
 
 ####BubbleImageView
