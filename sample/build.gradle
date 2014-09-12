@@ -5,7 +5,7 @@ android {
     buildToolsVersion "20.0.0"
 
     defaultConfig {
-        applicationId "android.com.ext.circular_imageview"
+        applicationId "com.github.siyamed.shapeimageview.sample"
         minSdkVersion 9
         targetSdkVersion 19
         versionCode 1
