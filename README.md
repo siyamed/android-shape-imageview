@@ -125,3 +125,10 @@ See/execute the [sample](sample) for a demonstration of the components.
 
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
+
+## Sample App Video
+Shows the video from the sample app to demonstrate scrolling
+
+[![Android Shaped Image View Scrolling](http://img.youtube.com/vi/6fCkptmwxtQ/0.jpg)](http://youtu.be/6fCkptmwxtQ)
+
+<video src="" poster="poster.jpg" width="320" height="200" controls preload></video>
