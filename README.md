@@ -123,8 +123,7 @@ Attributes:
 
 See/execute the [sample](sample) for a demonstration of the components.
 
+If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstrating scrolling in the sample app
+
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
-
-## Sample App Video
-[Youtube video](http://youtu.be/6fCkptmwxtQ) demonstrating scrolling in the sample app
