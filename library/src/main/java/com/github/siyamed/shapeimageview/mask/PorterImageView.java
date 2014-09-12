@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
 
-import ext.com.android.R;
+import com.github.siyamed.shapeimageview.R;
 
 public abstract class PorterImageView extends ImageView {
     private static final String TAG = PorterImageView.class.getSimpleName();

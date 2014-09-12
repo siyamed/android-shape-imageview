@@ -8,8 +8,6 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 
-import ext.com.android.R;
-
 public class RoundedShader extends ShaderHelper {
 
     private RectF borderRect = new RectF();

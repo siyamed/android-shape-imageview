@@ -8,8 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
 
-import ext.com.android.R;
-
 public class BubbleShader extends ShaderHelper {
     private static final int DEFAULT_HEIGHT_DP = 10;
 

@@ -9,7 +9,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 
-import ext.com.android.R;
+import com.github.siyamed.shapeimageview.R;
 
 public class PorterShapeImageView extends PorterImageView {
     private Drawable shape;
