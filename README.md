@@ -35,6 +35,11 @@ compile 'com.github.siyamed:android-shape-imageview:0.9@aar'
     app:square="true"/>
 ```
 
+Attributes:
+* `triangleHeight` the height of the bubble pointer in dp  
+* `arrowPosition` where to point the arrow, currently `left|right`
+* `square` set width and height to the minimum of the given values `true|false`
+
 ####RoundedImageView
 ![Android Rounded Rectangle ImageView](images/small-rounded.png)
 ```XML
@@ -48,6 +53,12 @@ compile 'com.github.siyamed:android-shape-imageview:0.9@aar'
     app:square="true"/>
 ```
 
+Attributes:
+* `borderColor` border color 
+* `borderWidth` border width in dp
+* `borderAlpha` alpha value of the border between 0.0-1.0
+* `square` set width and height to the minimum of the given values `true|false`
+
 ####CircularImageView
 ![Android Circular ImageView](images/small-circle.png)
 ```XML
@@ -58,7 +69,14 @@ compile 'com.github.siyamed:android-shape-imageview:0.9@aar'
     app:borderWidth="6dp"
     app:borderColor="@color/darkgray"/>
 ```
+
+Attributes:
+* `borderColor` border color 
+* `borderWidth` border width in dp
+* `borderAlpha` alpha value of the border between 0.0-1.0
+
 ####PorterShapeImageView
+
 * With mask bitmap
 
 ![Android Star Shape ImageView ](images/small-mask-star.png)
@@ -97,9 +115,17 @@ rounded rectangle shape definition in XML:
 </shape>
 ```
 
+Attributes:
+* `shape` the bitmap mask shape, either a shape drawable or a bitmap  
+* `square` set width and height to the minimum of the given values `true|false`
+
 ## Sample
 
 See/execute the [sample](sample) for a demonstration of the components.
 
+If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstrating scrolling in the sample app
+
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
+
+[![Android Shape Image View on Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--shape--imageview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/932)
