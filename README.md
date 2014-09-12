@@ -127,3 +127,5 @@ If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstr
 
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
+
+[![Android Shape Image View on Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--shape--imageview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/932)
