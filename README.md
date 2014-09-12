@@ -1,4 +1,4 @@
-# Shape Image View [![](https://travis-ci.org/siyamed/shape-imageview.svg?branch=master)](https://travis-ci.org/siyamed/shape-imageview/)
+# Shape Image View [![](https://travis-ci.org/siyamed/android-shape-imageview.svg?branch=master)](https://travis-ci.org/siyamed/android-shape-imageview/)
 Provides a set of custom shaped android imageview components, and a framework to define more shapes. Implements both **shader** and **bitmap mask** based image views. 
 
 * Shader based one uses *canvas draw methods* and *Path* construct, 
