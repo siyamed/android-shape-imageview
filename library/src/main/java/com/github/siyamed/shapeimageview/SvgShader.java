@@ -2,11 +2,10 @@ package com.github.siyamed.shapeimageview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Matrix;
 import android.util.AttributeSet;
 
 public class SvgShader extends ShaderHelper {
@@ -45,45 +44,21 @@ public class SvgShader extends ShaderHelper {
     }
 
     @Override
-    public Bitmap calculateDrawableSizes() {
-        Bitmap bitmap = getBitmap();
+    public void calculate(int bitmapWidth, int bitmapHeight, float width, float height, float scale, float translateX, float translateY) {
         path.reset();
-        if(bitmap != null) {
-            int bitmapWidth = bitmap.getWidth();
-            int bitmapHeight = bitmap.getHeight();
 
-            if(bitmapWidth > 0 && bitmapHeight > 0) {
-                float width = Math.round(viewWidth - 2f * borderWidth);
-                float height = Math.round(viewHeight - 2f * borderWidth);
+        pathDimensions[0] = (float) SvgUtil.HEART_PATH_WIDTH;
+        pathDimensions[1] = (float) SvgUtil.HEART_PATH_HEIGHT;
 
-                float scale = 1f;
-                float translateX = 0;
-                float translateY = 0;
+        pathMatrix.reset();
 
-                if (bitmapWidth * height > width * bitmapHeight) {
-                    scale = height / bitmapHeight;
-                    translateX = Math.round((width/scale - bitmapWidth) / 2f);
-                } else {
-                    scale = width / (float) bitmapWidth;
-                    translateY = Math.round((height/scale - bitmapHeight) / 2f);
-                }
-
-                matrix.setScale(scale, scale);
-                matrix.preTranslate(translateX, translateY);
-                matrix.postTranslate(borderWidth, borderWidth);
-
-                pathDimensions[0] = (float) SvgUtil.HEART_PATH_WIDTH;
-                pathDimensions[1] = (float) SvgUtil.HEART_PATH_HEIGHT;
-
-                pathMatrix.reset();
-
-                scale = Math.min(width / pathDimensions[0], height / pathDimensions[1]);
-                translateX = Math.round((width - pathDimensions[0] * scale) * 0.5f);
-                translateY = Math.round((height- pathDimensions[1] * scale) * 0.5f);
-                pathMatrix.setScale(scale, scale);
-                pathMatrix.postTranslate(translateX, translateY);
-                shapePath.transform(pathMatrix, path);
-                path.offset(borderWidth, borderWidth);
+        scale = Math.min(width / pathDimensions[0], height / pathDimensions[1]);
+        translateX = Math.round((width - pathDimensions[0] * scale) * 0.5f);
+        translateY = Math.round((height- pathDimensions[1] * scale) * 0.5f);
+        pathMatrix.setScale(scale, scale);
+        pathMatrix.postTranslate(translateX, translateY);
+        shapePath.transform(pathMatrix, path);
+        path.offset(borderWidth, borderWidth);
 
 //                if(borderWidth > 0) {
 //                    path.offset(borderWidth, borderWidth);
@@ -97,14 +72,13 @@ public class SvgShader extends ShaderHelper {
 //                    borderPath.op(path, Path.Op.DIFFERENCE);
 //                }
 
-                pathMatrix.reset();
-                matrix.invert(pathMatrix);
-                path.transform(pathMatrix);
+        pathMatrix.reset();
+        matrix.invert(pathMatrix);
+        path.transform(pathMatrix);
+    }
 
-                return bitmap;
-            }
-        }
-
-        return null;
+    @Override
+    public void reset() {
+        path.reset();
     }
 }
