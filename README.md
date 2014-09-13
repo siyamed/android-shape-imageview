@@ -77,7 +77,7 @@ Attributes:
 
 ####PorterShapeImageView
 
-* With mask bitmap
+* With [mask bitmap](sample/src/main/res/drawable/star.png): 
 
 ![Android Star Shape ImageView ](images/small-mask-star.png)
 ```XML
@@ -89,7 +89,7 @@ Attributes:
     app:square="true"/>
 ```
 
-* With shape XML
+* With [shape XML](sample/src/main/res/drawable/shape_rounded_rectangle.xml):
 
 ![Android Star Shape ImageView ](images/small-xmlshape-rounded.png)
 
