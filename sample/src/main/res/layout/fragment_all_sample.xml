@@ -131,6 +131,19 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.github.siyamed.shapeimageview.PathImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"/>
+
+        </LinearLayout>
+
     </LinearLayout>
 
 </ScrollView>
