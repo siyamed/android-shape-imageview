@@ -2,7 +2,6 @@ package com.github.siyamed.shapeimageview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
@@ -50,71 +49,48 @@ public class BubbleShader extends ShaderHelper {
     }
 
     @Override
-    public Bitmap calculateDrawableSizes() {
-        Bitmap bitmap = getBitmap();
-        if(bitmap != null) {
-            int bitmapWidth = bitmap.getWidth();
-            int bitmapHeight = bitmap.getHeight();
+    public void calculate(int bitmapWidth, int bitmapHeight,
+                          float width, float height,
+                          float scale,
+                          float translateX, float translateY) {
+        path.reset();
+        float x = -translateX;
+        float y = -translateY;
+        float scaledTriangleHeight = triangleHeightPx / scale;
+        float resultWidth = bitmapWidth + 2 * translateX;
+        float resultHeight = bitmapHeight + 2 * translateY;
+        float centerY  = resultHeight / 2f + y;
+        float triangle = scaledTriangleHeight; //scaledTriangleHeight * 2f / (float) Math.sqrt(3) / 2;
 
-            if(bitmapWidth > 0 && bitmapHeight > 0) {
-                float width = Math.round(viewWidth - 2f * borderWidth);
-                float height = Math.round(viewHeight - 2f * borderWidth);
+        path.setFillType(Path.FillType.EVEN_ODD);
+        float rectLeft;
+        float rectRight;
+        switch (arrowPosition) {
+            case LEFT:
+                rectLeft = scaledTriangleHeight + x;
+                rectRight = resultWidth + rectLeft;
+                path.addRect(rectLeft, y, rectRight, resultHeight + y, Path.Direction.CW);
 
-                float scale = 1f;
-                float translateX = 0;
-                float translateY = 0;
-
-                if (bitmapWidth * height > width * bitmapHeight) {
-                    scale = height / bitmapHeight;
-                    translateX = Math.round((width/scale - bitmapWidth) / 2f);
-                } else {
-                    scale = width / (float) bitmapWidth;
-                    translateY = Math.round((height/scale - bitmapHeight) / 2f);;
-                }
-
-                matrix.setScale(scale, scale);
-                matrix.preTranslate(translateX, translateY);
-                matrix.postTranslate(borderWidth, borderWidth);
-
-                path.reset();
-
-                float x = -translateX;
-                float y = -translateY;
-                float scaledTriangleHeight = triangleHeightPx / scale;
-                float resultWidth = bitmapWidth + 2 * translateX;
-                float resultHeight = bitmapHeight + 2 * translateY;
-                float centerY  = resultHeight / 2f + y;
-                float triangle = scaledTriangleHeight; //scaledTriangleHeight * 2f / (float) Math.sqrt(3) / 2;
-
-                path.setFillType(Path.FillType.EVEN_ODD);
-                float rectLeft;
-                float rectRight;
-                switch (arrowPosition) {
-                    case LEFT:
-                        rectLeft = scaledTriangleHeight + x;
-                        rectRight = resultWidth + rectLeft;
-                        path.addRect(rectLeft, y, rectRight, resultHeight + y, Path.Direction.CW);
-
-                        path.moveTo(x, centerY);
-                        path.lineTo(rectLeft, centerY - triangle);
-                        path.lineTo(rectLeft, centerY + triangle);
-                        path.lineTo(x, centerY);
-                        break;
-                    case RIGHT:
-                        rectLeft = x;
-                        float imgRight = resultWidth + rectLeft;
-                        rectRight = imgRight - scaledTriangleHeight;
-                        path.addRect(rectLeft, y, rectRight, resultHeight + y, Path.Direction.CW);
-                        path.moveTo(imgRight, centerY);
-                        path.lineTo(rectRight, centerY - triangle);
-                        path.lineTo(rectRight, centerY + triangle);
-                        path.lineTo(imgRight, centerY);
-                        break;
-                }
-
-                return bitmap;
-            }
+                path.moveTo(x, centerY);
+                path.lineTo(rectLeft, centerY - triangle);
+                path.lineTo(rectLeft, centerY + triangle);
+                path.lineTo(x, centerY);
+                break;
+            case RIGHT:
+                rectLeft = x;
+                float imgRight = resultWidth + rectLeft;
+                rectRight = imgRight - scaledTriangleHeight;
+                path.addRect(rectLeft, y, rectRight, resultHeight + y, Path.Direction.CW);
+                path.moveTo(imgRight, centerY);
+                path.lineTo(rectRight, centerY - triangle);
+                path.lineTo(rectRight, centerY + triangle);
+                path.lineTo(imgRight, centerY);
+                break;
         }
-        return null;
+    }
+
+    @Override
+    public void reset() {
+        path.reset();
     }
 }

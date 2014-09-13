@@ -31,8 +31,6 @@ public abstract class ShaderHelper {
     protected Drawable drawable;
     protected Matrix matrix = new Matrix();
 
-
-
     public ShaderHelper() {
         borderPaint = new Paint();
         borderPaint.setStyle(Paint.Style.STROKE);
@@ -43,7 +41,8 @@ public abstract class ShaderHelper {
     }
 
     public abstract void draw(Canvas canvas, Paint imagePaint, Paint borderPaint);
-    public abstract Bitmap calculateDrawableSizes();
+    public abstract void calculate(int bitmapWidth, int bitmapHeight, float width, float height, float scale, float translateX, float translateY);
+    public abstract void reset();
 
     protected final int dpToPx(DisplayMetrics displayMetrics, int dp) {
         int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
@@ -90,6 +89,42 @@ public abstract class ShaderHelper {
         if(shader != null) {
             calculateDrawableSizes();
         }
+    }
+
+    public Bitmap calculateDrawableSizes() {
+        Bitmap bitmap = getBitmap();
+        if(bitmap != null) {
+            int bitmapWidth = bitmap.getWidth();
+            int bitmapHeight = bitmap.getHeight();
+
+            if(bitmapWidth > 0 && bitmapHeight > 0) {
+                float width = Math.round(viewWidth - 2f * borderWidth);
+                float height = Math.round(viewHeight - 2f * borderWidth);
+
+                float scale = 1f;
+                float translateX = 0;
+                float translateY = 0;
+
+                if (bitmapWidth * height > width * bitmapHeight) {
+                    scale = height / bitmapHeight;
+                    translateX = Math.round((width/scale - bitmapWidth) / 2f);
+                } else {
+                    scale = width / (float) bitmapWidth;
+                    translateY = Math.round((height/scale - bitmapHeight) / 2f);;
+                }
+
+                matrix.setScale(scale, scale);
+                matrix.preTranslate(translateX, translateY);
+                matrix.postTranslate(borderWidth, borderWidth);
+
+                calculate(bitmapWidth, bitmapHeight, width, height, scale, translateX, translateY);
+
+                return bitmap;
+            }
+        }
+
+        reset();
+        return null;
     }
 
     public final void onImageDrawableReset(Drawable drawable) {
