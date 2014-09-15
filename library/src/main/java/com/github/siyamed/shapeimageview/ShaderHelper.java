@@ -14,8 +14,9 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 
+@SuppressWarnings("WeakerAccess")
 public abstract class ShaderHelper {
-    private static int ALPHA_MAX = 255;
+    private final static int ALPHA_MAX = 255;
 
     protected int viewWidth;
     protected int viewHeight;
@@ -25,11 +26,11 @@ public abstract class ShaderHelper {
     protected float borderAlpha = 1f;
     protected boolean square = false;
 
-    protected Paint borderPaint;
-    protected Paint imagePaint;
+    protected final Paint borderPaint;
+    protected final Paint imagePaint;
     protected BitmapShader shader;
     protected Drawable drawable;
-    protected Matrix matrix = new Matrix();
+    protected final Matrix matrix = new Matrix();
 
     public ShaderHelper() {
         borderPaint = new Paint();
@@ -41,12 +42,14 @@ public abstract class ShaderHelper {
     }
 
     public abstract void draw(Canvas canvas, Paint imagePaint, Paint borderPaint);
-    public abstract void calculate(int bitmapWidth, int bitmapHeight, float width, float height, float scale, float translateX, float translateY);
     public abstract void reset();
+    @SuppressWarnings("UnusedParameters")
+    public abstract void calculate(int bitmapWidth, int bitmapHeight, float width, float height, float scale, float translateX, float translateY);
 
+
+    @SuppressWarnings("SameParameterValue")
     protected final int dpToPx(DisplayMetrics displayMetrics, int dp) {
-        int px = Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
-        return px;
+        return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
     public boolean isSquare() {
@@ -101,7 +104,7 @@ public abstract class ShaderHelper {
                 float width = Math.round(viewWidth - 2f * borderWidth);
                 float height = Math.round(viewHeight - 2f * borderWidth);
 
-                float scale = 1f;
+                float scale;
                 float translateX = 0;
                 float translateY = 0;
 
@@ -110,7 +113,7 @@ public abstract class ShaderHelper {
                     translateX = Math.round((width/scale - bitmapWidth) / 2f);
                 } else {
                     scale = width / (float) bitmapWidth;
-                    translateY = Math.round((height/scale - bitmapHeight) / 2f);;
+                    translateY = Math.round((height/scale - bitmapHeight) / 2f);
                 }
 
                 matrix.setScale(scale, scale);

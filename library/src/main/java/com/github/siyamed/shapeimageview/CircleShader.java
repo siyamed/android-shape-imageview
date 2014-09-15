@@ -6,11 +6,11 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 
 public class CircleShader extends ShaderHelper {
-    float center;
-    float bitmapCenterX;
-    float bitmapCenterY;
-    float borderRadius;
-    int bitmapRadius;
+    private float center;
+    private float bitmapCenterX;
+    private float bitmapCenterY;
+    private float borderRadius;
+    private int bitmapRadius;
 
     public CircleShader() {
     }
