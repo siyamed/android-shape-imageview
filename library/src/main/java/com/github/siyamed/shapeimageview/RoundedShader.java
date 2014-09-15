@@ -9,8 +9,8 @@ import android.util.AttributeSet;
 
 public class RoundedShader extends ShaderHelper {
 
-    private RectF borderRect = new RectF();
-    private RectF imageRect = new RectF();
+    private final RectF borderRect = new RectF();
+    private final RectF imageRect = new RectF();
 
     private int radius = 0;
     private int bitmapRadius;
@@ -38,6 +38,7 @@ public class RoundedShader extends ShaderHelper {
         canvas.restore();
     }
 
+    @SuppressWarnings("SuspiciousNameCombination")
     @Override
     public void onSizeChanged(int width, int height) {
         super.onSizeChanged(width, height);

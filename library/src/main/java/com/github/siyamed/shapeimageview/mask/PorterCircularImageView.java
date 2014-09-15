@@ -7,24 +7,24 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 
 public class PorterCircularImageView extends PorterImageView {
-    private RectF rect = new RectF();
+    private final RectF rect = new RectF();
 
     public PorterCircularImageView(Context context) {
         super(context);
-        setup(context, null, 0);
+        setup();
     }
 
     public PorterCircularImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setup(context, attrs, 0);
+        setup();
     }
 
     public PorterCircularImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setup(context, attrs, defStyle);
+        setup();
     }
 
-    private void setup(Context context, AttributeSet attrs, int defStyle) {
+    private final void setup() {
         setSquare(true);
     }
 

@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.github.siyamed.shapeimageview.R;
 
+@SuppressWarnings("WeakerAccess")
 public abstract class PorterImageView extends ImageView {
     private static final String TAG = PorterImageView.class.getSimpleName();
 
@@ -47,6 +48,7 @@ public abstract class PorterImageView extends ImageView {
         setup(context, attrs, defStyle);
     }
 
+    @SuppressWarnings("SameParameterValue")
     public void setSquare(boolean square) {
         this.square = square;
     }
@@ -61,6 +63,9 @@ public abstract class PorterImageView extends ImageView {
         if(getScaleType() == ScaleType.FIT_CENTER) {
             setScaleType(ScaleType.CENTER_CROP);
         }
+
+        maskPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        maskPaint.setColor(Color.BLACK);
     }
 
     public void invalidate() {
@@ -81,8 +86,8 @@ public abstract class PorterImageView extends ImageView {
             maskCanvas = new Canvas();
             maskBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
             maskCanvas.setBitmap(maskBitmap);
-            maskPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-            maskPaint.setColor(Color.BLACK);
+
+            maskPaint.reset();
             paintMaskCanvas(maskCanvas, maskPaint, width, height);
 
             drawableCanvas = new Canvas();
@@ -110,9 +115,7 @@ public abstract class PorterImageView extends ImageView {
                         } else {
                             int drawableSaveCount = drawableCanvas.getSaveCount();
                             drawableCanvas.save();
-                            if (imageMatrix != null) {
-                                drawableCanvas.concat(imageMatrix);
-                            }
+                            drawableCanvas.concat(imageMatrix);
                             drawable.draw(drawableCanvas);
                             drawableCanvas.restoreToCount(drawableSaveCount);
                         }
@@ -127,7 +130,6 @@ public abstract class PorterImageView extends ImageView {
                 if (!invalidated) {
                     drawablePaint.setXfermode(null);
                     canvas.drawBitmap(drawableBitmap, 0.0f, 0.0f, drawablePaint);
-                    return;
                 }
             } catch (Exception e) {
                 String log = "Exception occured while drawing " + getId();
