@@ -16,3 +16,14 @@ notifications:
 
 script: './gradlew build'
 
+env:
+  global:
+   - secure: "lIeUQHr/ayeq4lFlmSLXQWhLbssbzBB3/t7R1o1JhftaMkc/Ju6WySWdlBIweMK9mVFgV4dEx0OdSGmTvJuMpcvlR5HELoQ5Vu0Uy+y2v2TgAYhbuwi92UlHsyVnG7Pj7c0ecG1gUYqmZEbylXrWkwEsbSEtpPmNGDCfIaI9oxM="
+
+addons:
+  coverity_scan:
+    project:
+      name: "siyamed/android-shape-imageview"
+      description: "Build submitted via Travis CI"
+    build_command: "./gradlew clean build"
+    branch_pattern: master
