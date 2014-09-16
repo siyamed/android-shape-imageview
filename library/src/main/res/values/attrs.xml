@@ -5,6 +5,20 @@
         <enum name="left" value="0" />
         <enum name="right" value="1" />
     </attr>
+    <attr name="borderType">
+        <enum name="stroke" value="0" />
+        <enum name="fill" value="1" />
+    </attr>
+    <attr name="strokeCap">
+        <enum name="butt" value="0" />
+        <enum name="round" value="1" />
+        <enum name="square" value="2" />
+    </attr>
+    <attr name="strokeJoin">
+        <enum name="bevel" value="0" />
+        <enum name="miter" value="1" />
+        <enum name="round" value="2" />
+    </attr>
     <declare-styleable name="ShaderImageView">
         <attr name="square" format="boolean" />
         <attr name="borderColor" format="color" />
@@ -16,7 +30,12 @@
         <!--BubbleImageView-->
         <attr name="arrowPosition"/>
         <attr name="triangleHeight" format="dimension"/>
-        <!--PortedImageView-->
+        <!--PorterImageView-->
         <attr name="shape" format="integer|reference" />
+        <!--ShaderImageView-->
+        <attr name="borderType"/>
+        <attr name="strokeCap"/>
+        <attr name="strokeJoin"/>
+        <attr name="strokeMiter" format="dimension" />
     </declare-styleable>
 </resources>

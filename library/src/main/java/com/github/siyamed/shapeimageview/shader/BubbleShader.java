@@ -1,4 +1,4 @@
-package com.github.siyamed.shapeimageview;
+package com.github.siyamed.shapeimageview.shader;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
+
+import com.github.siyamed.shapeimageview.R;
 
 public class BubbleShader extends ShaderHelper {
     private static final int DEFAULT_HEIGHT_DP = 10;

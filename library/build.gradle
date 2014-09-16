@@ -13,7 +13,7 @@ android {
 }
 
 dependencies {
-    compile 'org.mapsforge:svg-android:0.4.3'
+    compile group: 'net.sf.kxml', name: 'kxml2', version:'2.3.0'
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
