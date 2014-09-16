@@ -8,7 +8,7 @@ public class PathParser {
 
     private static final String TAG = SvgParser.TAG;;
 
-    /**
+    /*
      * This is where the hard-to-parse paths are handled.
      * Uppercase rules are absolute positions, lowercase are relative.
      * Types of path rules:
@@ -26,8 +26,6 @@ public class PathParser {
      * </ol>
      * <p/>
      * Numbers are separate by whitespace, comma or nothing at all (!) if they are self-delimiting, (ie. begin with a - sign)
-     *
-     * @param s the path string from the XML
      */
     public static Path doPath(String s) {
         int n = s.length();
@@ -238,11 +236,10 @@ public class PathParser {
         return p;
     }
 
-    /**
+    /*
      * Elliptical arc implementation based on the SVG specification notes
      * Adapted from the Batik library (Apache-2 license) by SAU
      */
-
     private static void drawArc(Path path, double x0, double y0, double x, double y, double rx,
                                 double ry, double angle, boolean largeArcFlag, boolean sweepFlag) {
         double dx2 = (x0 - x) / 2.0;
