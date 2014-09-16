@@ -80,9 +80,7 @@ public class ParserHelper {
         current = read();
     }
 
-    /**
-     * Parses the content of the buffer and converts it to a float.
-     */
+    //Parses the content of the buffer and converts it to a float.
     public float parseFloat() {
         int     mant     = 0;
         int     mantDig  = 0;
@@ -262,9 +260,7 @@ public class ParserHelper {
         throw new RuntimeException("Unexpected char '" + c + "'.");
     }
 
-    /**
-     * Computes a float from mantissa and exponent.
-     */
+    //Computes a float from mantissa and exponent.
     public static float buildFloat(int mant, int exp) {
         if (exp < -125 || mant == 0) {
             return 0.0f;
