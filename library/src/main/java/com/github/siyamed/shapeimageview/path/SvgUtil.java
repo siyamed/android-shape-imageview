@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.github.siyamed.shapeimageview.path.parser.IoUtil;
 import com.github.siyamed.shapeimageview.path.parser.PathInfo;
-import com.github.siyamed.shapeimageview.path.parser.SvgParser;
+import com.github.siyamed.shapeimageview.path.parser.SvgToPath;
 
 import java.io.InputStream;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class SvgUtil {
             InputStream is = null;
             try {
                 is = context.getResources().openRawResource(resId);
-                pathInfo = SvgParser.getSVGFromInputStream(is);
+                pathInfo = SvgToPath.getSVGFromInputStream(is);
             } finally {
                 IoUtil.closeQuitely(is);
             }

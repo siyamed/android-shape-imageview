@@ -4,7 +4,7 @@ import android.graphics.Matrix;
 import android.util.Log;
 
 class TransformParser {
-    private static final String TAG = SvgParser.class.getSimpleName();
+    private static final String TAG = SvgToPath.class.getSimpleName();
 
     // Process a list of transforms
     // foo(n,n,n...) bar(n,n,n..._ ...)

@@ -6,7 +6,7 @@ import android.util.Log;
 
 public class PathParser {
 
-    private static final String TAG = SvgParser.TAG;;
+    private static final String TAG = SvgToPath.TAG;;
 
     /*
      * This is where the hard-to-parse paths are handled.

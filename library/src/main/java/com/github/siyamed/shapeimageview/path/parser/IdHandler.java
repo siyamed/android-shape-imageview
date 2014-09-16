@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Stack;
 
 class IdHandler {
-    private static final String TAG = SvgParser.TAG;;
+    private static final String TAG = SvgToPath.TAG;;
 
     HashMap<String, String> idXml = new HashMap<String, String>();
     Stack<IdRecording> idRecordingStack = new Stack<IdRecording>();

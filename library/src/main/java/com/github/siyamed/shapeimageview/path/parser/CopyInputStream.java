@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 class CopyInputStream {
-    private static final String TAG = SvgParser.TAG;;
+    private static final String TAG = SvgToPath.TAG;;
 
     private InputStream _is;
     private ByteArrayOutputStream _copy;

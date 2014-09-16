@@ -39,20 +39,20 @@ import java.util.LinkedList;
 
  */
 
-public class SvgParser {
-    static final String TAG = SvgParser.class.getSimpleName();
+public class SvgToPath {
+    static final String TAG = SvgToPath.class.getSimpleName();
     static float DPI = 72.0f;
 
     public static PathInfo getSVGFromInputStream(InputStream inputStream) {
-        return SvgParser.parse(inputStream, true, DPI);
+        return SvgToPath.parse(inputStream, true, DPI);
     }
 
     public static PathInfo getSVGFromString(String svgString)  {
-        return SvgParser.parse(new ByteArrayInputStream(svgString.getBytes()), false, DPI);
+        return SvgToPath.parse(new ByteArrayInputStream(svgString.getBytes()), false, DPI);
     }
 
     public static PathInfo getSVGFromResource(Resources resources, int resId) {
-        return SvgParser.parse(resources.openRawResource(resId), false, DPI);
+        return SvgToPath.parse(resources.openRawResource(resId), false, DPI);
     }
 
     public static PathInfo getSVGFromAsset(AssetManager assetMngr, String path) throws IOException {
@@ -64,7 +64,7 @@ public class SvgParser {
     private static PathInfo parse(InputStream in, boolean ignoreDefs, float dpi)  {
         try {
             XmlPullParser xr = new KXmlParser();
-            SvgParser svgHandler = new SvgParser(xr);
+            SvgToPath svgHandler = new SvgToPath(xr);
             svgHandler.setDpi(dpi);
 
             if (ignoreDefs) {
@@ -113,7 +113,7 @@ public class SvgParser {
     private Path path;
     private PathInfo pathInfo = null;
 
-    private SvgParser(XmlPullParser atts) {
+    private SvgToPath(XmlPullParser atts) {
         this.atts = atts;
     }
 
