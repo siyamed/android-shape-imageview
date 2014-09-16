@@ -1,4 +1,4 @@
-package com.github.siyamed.shapeimageview;
+package com.github.siyamed.shapeimageview.shader;
 
 import android.content.Context;
 import android.graphics.Canvas;

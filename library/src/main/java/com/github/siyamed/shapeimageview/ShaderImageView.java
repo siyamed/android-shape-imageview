@@ -7,8 +7,11 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.github.siyamed.shapeimageview.shader.ShaderHelper;
+
 public abstract class ShaderImageView extends ImageView {
 
+    protected final static boolean DEBUG = false;
     private ShaderHelper pathHelper;
 
     public ShaderImageView(Context context) {
@@ -77,9 +80,14 @@ public abstract class ShaderImageView extends ImageView {
 
     @Override
     public void onDraw(Canvas canvas) {
+        if(DEBUG) {
+            canvas.drawRGB(10, 200, 200);
+        }
+
         if(!getPathHelper().onDraw(canvas)) {
             super.onDraw(canvas);
         }
+
     }
 
 }

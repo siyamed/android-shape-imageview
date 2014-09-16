@@ -3,6 +3,9 @@ package com.github.siyamed.shapeimageview;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.github.siyamed.shapeimageview.shader.BubbleShader;
+import com.github.siyamed.shapeimageview.shader.ShaderHelper;
+
 public class BubbleImageView extends ShaderImageView {
 
     public BubbleImageView(Context context) {

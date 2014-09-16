@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--viewBox = "0 0 283 283" -->
+<svg viewBox = "0 0 283 283" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <rect height="200" width="200"
+  fill="#000000" 
+  transform="rotate(-45 141.5 141.5)"
+  x="41.5"
+  y="41.5"/>
+ </g>
+</svg>

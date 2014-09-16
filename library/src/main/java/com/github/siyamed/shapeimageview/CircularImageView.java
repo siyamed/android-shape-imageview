@@ -3,6 +3,9 @@ package com.github.siyamed.shapeimageview;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.github.siyamed.shapeimageview.shader.CircleShader;
+import com.github.siyamed.shapeimageview.shader.ShaderHelper;
+
 public class CircularImageView extends ShaderImageView {
 
     public CircularImageView(Context context) {

@@ -1,4 +1,4 @@
-package com.github.siyamed.shapeimageview;
+package com.github.siyamed.shapeimageview.shader;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -13,6 +13,8 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
+
+import com.github.siyamed.shapeimageview.R;
 
 @SuppressWarnings("WeakerAccess")
 public abstract class ShaderHelper {

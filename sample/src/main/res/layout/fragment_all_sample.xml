@@ -134,13 +134,63 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <com.github.siyamed.shapeimageview.PathImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <com.github.siyamed.shapeimageview.DiamondImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/neo"/>
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.PentagonImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.HexagonImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.OctogonImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.HeartImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.StarImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:borderWidth="8dp"
+                app:borderColor="@color/darkgray"
+                app:strokeCap="round"
+                app:strokeJoin="round"
+                android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
 
