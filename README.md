@@ -21,7 +21,7 @@ There are many projects online implementing such components, however one goal of
 
 Gradle dependency:
 ```Groovy
-compile 'com.github.siyamed:android-shape-imageview:0.9@aar'
+compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
 ```
 
 ####BubbleImageView
@@ -168,6 +168,7 @@ Attributes:
 * `borderAlpha` alpha value of the border between 0.0-1.0
 * `strokeCap` border stroke cap type `butt|round|square`
 * `strokeJoin` border stroke join type `bevel|miter|round`
+* `square` set width and height to the minimum of the given values `true|false`
 
 ####PorterShapeImageView
 
