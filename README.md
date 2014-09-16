@@ -75,7 +75,103 @@ Attributes:
 * `borderWidth` border width in dp
 * `borderAlpha` alpha value of the border between 0.0-1.0
 
+####DiamondImageView
+![Android Diamond ImageView](images/small-diamond.png)
+```XML
+<com.github.siyamed.shapeimageview.DiamondImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"/>
+```
+
+[Attributes](#shader_attributes) 
+
+####PentagonImageView
+![Android Pentagon ImageView](images/small-pentagon.png)
+```XML
+<com.github.siyamed.shapeimageview.PentagonImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"/>
+```
+
+[Attributes](#shader_attributes) 
+
+####HexagonImageView
+![Android Hexagon ImageView](images/small-hexagon.png)
+```XML
+<com.github.siyamed.shapeimageview.HexagonImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"/>
+```
+
+[Attributes](#shader_attributes) 
+
+####OctogonImageView
+![Android Octogon ImageView](images/small-octogon.png)
+```XML
+<com.github.siyamed.shapeimageview.Octogon
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"/>
+```
+
+[Attributes](#shader_attributes) 
+
+####StarImageView
+![Android Start ImageView](images/small-star.png)
+```XML
+<com.github.siyamed.shapeimageview.StarImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"
+    app:strokeCap="round"
+    app:strokeJoin="round"/>
+```
+
+[Attributes](#shader_attributes) 
+
+####HeartImageView
+![Android Heart ImageView](images/small-heart.png)
+```XML
+<com.github.siyamed.shapeimageview.Heart
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:src="@drawable/neo"
+    app:borderWidth="8dp"
+    app:borderColor="@color/darkgray"/>
+```
+
+[Attributes](#shader_attributes) 
+
+<a name="shader_attributes"></a>
+Attributes:
+* `borderColor` border color 
+* `borderWidth` border width in dp
+* `borderAlpha` alpha value of the border between 0.0-1.0
+* `strokeCap` border stroke cap type `butt|round|square`
+* `strokeJoin` border stroke join type `bevel|miter|round`
+
 ####PorterShapeImageView
+
+This methods uses extra bitmaps for masks. Therefore it would be good to use them for very custom shapes, possiblynot in a recycling view. 
 
 * With [mask bitmap](sample/src/main/res/drawable/star.png): 
 
@@ -126,6 +222,7 @@ See/execute the [sample](sample) for a demonstration of the components.
 If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstrating scrolling in the sample app
 
 ## References
-* [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks 
+* [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks  
+* [geosolutions-it/mapsforge/svg-android](https://github.com/geosolutions-it/mapsforge/tree/master/svg-android): Used and modified to create a path from a svg file 
 
 [![Android Shape Image View on Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--shape--imageview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/932)
