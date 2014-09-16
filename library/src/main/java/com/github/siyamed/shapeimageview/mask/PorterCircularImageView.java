@@ -24,7 +24,7 @@ public class PorterCircularImageView extends PorterImageView {
         setup();
     }
 
-    private final void setup() {
+    private void setup() {
         setSquare(true);
     }
 

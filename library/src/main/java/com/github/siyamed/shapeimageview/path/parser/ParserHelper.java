@@ -25,16 +25,16 @@ package com.github.siyamed.shapeimageview.path.parser;
  *
  * @author Apache Software Foundation, Larva Labs LLC
  */
-public class ParserHelper {
+class ParserHelper {
 
     private char current;
-    private CharSequence s;
+    private final CharSequence s;
     public int pos;
-    private int n;
+    private final int n;
 
-    public ParserHelper(CharSequence s, int pos) {
+    public ParserHelper(CharSequence s) {
         this.s = s;
-        this.pos = pos;
+        this.pos = 0;
         n = s.length();
         current = s.charAt(pos);
     }
@@ -60,7 +60,7 @@ public class ParserHelper {
         }
     }
 
-    public void skipNumberSeparator() {
+    void skipNumberSeparator() {
         while (pos < n) {
             char c = s.charAt(pos);
             switch (c) {
@@ -81,7 +81,7 @@ public class ParserHelper {
     }
 
     //Parses the content of the buffer and converts it to a float.
-    public float parseFloat() {
+    float parseFloat() {
         int     mant     = 0;
         int     mantDig  = 0;
         boolean mantPos  = true;
@@ -261,7 +261,7 @@ public class ParserHelper {
     }
 
     //Computes a float from mantissa and exponent.
-    public static float buildFloat(int mant, int exp) {
+    private static float buildFloat(int mant, int exp) {
         if (exp < -125 || mant == 0) {
             return 0.0f;
         }

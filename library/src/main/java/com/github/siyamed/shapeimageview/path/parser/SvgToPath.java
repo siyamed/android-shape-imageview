@@ -1,7 +1,5 @@
 package com.github.siyamed.shapeimageview.path.parser;
 
-import android.content.res.AssetManager;
-import android.content.res.Resources;
 import android.graphics.Matrix;
 import android.graphics.Path;
 import android.graphics.RectF;
@@ -11,7 +9,6 @@ import org.kxml2.io.KXmlParser;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -41,24 +38,10 @@ import java.util.LinkedList;
 
 public class SvgToPath {
     static final String TAG = SvgToPath.class.getSimpleName();
-    static float DPI = 72.0f;
+    private static final float DPI = 72.0f;
 
     public static PathInfo getSVGFromInputStream(InputStream inputStream) {
         return SvgToPath.parse(inputStream, true, DPI);
-    }
-
-    public static PathInfo getSVGFromString(String svgString)  {
-        return SvgToPath.parse(new ByteArrayInputStream(svgString.getBytes()), false, DPI);
-    }
-
-    public static PathInfo getSVGFromResource(Resources resources, int resId) {
-        return SvgToPath.parse(resources.openRawResource(resId), false, DPI);
-    }
-
-    public static PathInfo getSVGFromAsset(AssetManager assetMngr, String path) throws IOException {
-        InputStream inputStream = assetMngr.open(path);
-        PathInfo result = getSVGFromInputStream(inputStream);
-        return result;
     }
 
     private static PathInfo parse(InputStream in, boolean ignoreDefs, float dpi)  {
@@ -83,12 +66,7 @@ public class SvgToPath {
                 svgHandler.processSvg();
             }
 
-            PathInfo result = svgHandler.pathInfo;
-
-//            if (!Float.isInfinite(svgHandler.limits.top)) {
-//                result.setLimits(svgHandler.limits);
-//            }
-            return result;
+            return svgHandler.pathInfo;
         } catch (Exception e) {
             Log.w(TAG, "Parse error: " + e);
             throw new RuntimeException(e);
@@ -98,15 +76,15 @@ public class SvgToPath {
     private final static Matrix IDENTITY_MATRIX = new Matrix();
 
     private HashMap<String, String> idXml = new HashMap<String, String>();
-    private XmlPullParser atts;
-    private RectF rect = new RectF();
+    private final XmlPullParser atts;
+    private final RectF rect = new RectF();
     private float dpi = DPI;
     private boolean hidden = false;
     private int hiddenLevel = 0;
     private boolean inDefsElement = false;
 
-    private Deque<Path> pathStack = new LinkedList<Path>();
-    private Deque<Matrix> matrixStack = new LinkedList<Matrix>();
+    private final Deque<Path> pathStack = new LinkedList<Path>();
+    private final Deque<Matrix> matrixStack = new LinkedList<Matrix>();
 
     private float width;
     private float height;
@@ -117,11 +95,11 @@ public class SvgToPath {
         this.atts = atts;
     }
 
-    public void setDpi(float dpi) {
+    void setDpi(float dpi) {
         this.dpi = dpi;
     }
 
-    public void processSvg() throws XmlPullParserException, IOException {
+    void processSvg() throws XmlPullParserException, IOException {
         int eventType = atts.getEventType();
         do {
             switch (eventType) {
@@ -156,19 +134,19 @@ public class SvgToPath {
         return matrixStack.pop();
     }
 
-    private final void pushPath() {
+    private void pushPath() {
         Path path = new Path();
         this.path = path;
         pathStack.add(path);
     }
 
-    private final Path popPath() {
+    private Path popPath() {
         Path poppedPath = pathStack.pop();
         this.path = pathStack.peek();
         return poppedPath;
     }
 
-    public void startElement() {
+    void startElement() {
         String localName = atts.getName();
 
         if (inDefsElement) {
@@ -350,14 +328,6 @@ public class SvgToPath {
         }
     }
 
-    @SuppressWarnings("unused")
-    private void showBounds(String text, Path p) {
-        RectF b= new RectF();
-        p.computeBounds(b, true);
-        Log.d(TAG, text + " bounds: " + b.left + "," + b.bottom + " to " + b.right + "," + b.top);
-    }
-
-    @SuppressWarnings("unused")
     private String showAttributes(XmlPullParser a) {
         String result = "";
         for(int i=0; i < a.getAttributeCount(); i++) {
@@ -366,7 +336,7 @@ public class SvgToPath {
         return result;
     }
 
-    public void endElement() {
+    void endElement() {
 
         String localName = atts.getName();
         if (inDefsElement) {
@@ -381,12 +351,10 @@ public class SvgToPath {
             Matrix matrix = popTransform();
             p.transform(matrix);
             pathInfo = new PathInfo(p, width, height);
-            //calculate bounds?
         } else if (localName.equals("g")) {
             // Break out of hidden mode
             if (hidden) {
                 hiddenLevel--;
-                //Util.debug("Hidden down: " + hiddenLevel);
                 if (hiddenLevel == 0) {
                     hidden = false;
                 }

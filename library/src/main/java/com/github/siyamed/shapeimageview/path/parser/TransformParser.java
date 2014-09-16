@@ -24,7 +24,7 @@ class TransformParser {
         return matrix;
     }
 
-    static Matrix parseTransformItem(String s, Matrix matrix) {
+    private static void parseTransformItem(String s, Matrix matrix) {
         if (s.startsWith("matrix(")) {
             NumberParse np = NumberParse.parseNumbers(s.substring("matrix(".length()));
             if (np.numbers.size() == 6) {
@@ -94,6 +94,5 @@ class TransformParser {
         } else {
             Log.w(TAG, "Invalid transform (" + s + ")");
         }
-        return matrix;
     }
 }

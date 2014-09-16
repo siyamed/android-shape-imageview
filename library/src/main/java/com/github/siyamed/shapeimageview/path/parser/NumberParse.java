@@ -4,9 +4,10 @@ import org.xmlpull.v1.XmlPullParser;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("FinalStaticMethod")
 class NumberParse {
-    ArrayList<Float> numbers;
-    int nextCmd;
+    final ArrayList<Float> numbers;
+    private final int nextCmd;
 
     private NumberParse(ArrayList<Float> numbers, int nextCmd) {
         this.numbers = numbers;
@@ -34,7 +35,6 @@ class NumberParse {
     }
 
     static NumberParse parseNumbers(String s) {
-        //Util.debug("Parsing numbers from: '" + s + "'");
         int n = s.length();
         int p = 0;
         ArrayList<Float> numbers = new ArrayList<Float>();
@@ -70,7 +70,6 @@ class NumberParse {
                 case ')': {
                     String str = s.substring(p, i);
                     if (str.trim().length() > 0) {
-                        //Util.debug("  Last: " + str);
                         Float f = Float.parseFloat(str);
                         numbers.add(f);
                     }
@@ -101,11 +100,10 @@ class NumberParse {
         }
         String last = s.substring(p);
         if (last.length() > 0) {
-            //Util.debug("  Last: " + last);
             try {
                 numbers.add(Float.parseFloat(last));
             } catch (NumberFormatException nfe) {
-                // Just white-space, forget it
+                //ignore
             }
             p = s.length();
         }

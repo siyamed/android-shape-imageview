@@ -8,44 +8,34 @@ import java.io.IOException;
 import java.io.InputStream;
 
 class CopyInputStream {
-    private static final String TAG = SvgToPath.TAG;;
+    private static final String TAG = SvgToPath.TAG;
 
-    private InputStream _is;
+    private final InputStream _is;
     private ByteArrayOutputStream _copy;
 
-    public CopyInputStream(InputStream is)
-    {
+    public CopyInputStream(InputStream is) {
         _is = is;
 
         try {
-            int count = copy();
+            copy();
         }
         catch(IOException ex) {
             Log.w(TAG, "IOException in CopyInputStream " + ex.toString());
         }
     }
 
-    private int copy() throws IOException {
+    private void copy() throws IOException {
         _copy = new ByteArrayOutputStream();
-        int read = 0;
-        int chunk = 0;
+        int chunk;
         byte[] data = new byte[256];
 
-        while(-1 != (chunk = _is.read(data)))
-        {
-            read += data.length;
-            // System.out.println("chunk = " + chunk);
-            // System.out.println("read = " + read);
-
+        while(-1 != (chunk = _is.read(data))) {
             _copy.write(data, 0, chunk);
         }
         _copy.flush();
-
-        return read;
     }
 
-    public ByteArrayInputStream getCopy()
-    {
+    public ByteArrayInputStream getCopy() {
         return new ByteArrayInputStream(_copy.toByteArray());
     }
 }

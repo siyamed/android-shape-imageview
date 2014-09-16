@@ -20,6 +20,7 @@ public class SvgUtil {
             try {
                 is = context.getResources().openRawResource(resId);
                 pathInfo = SvgToPath.getSVGFromInputStream(is);
+                PATH_MAP.put(resId, pathInfo);
             } finally {
                 IoUtil.closeQuitely(is);
             }

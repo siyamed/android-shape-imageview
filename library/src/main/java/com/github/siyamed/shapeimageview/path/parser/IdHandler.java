@@ -9,22 +9,23 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Stack;
 
+@SuppressWarnings("StatementWithEmptyBody")
 class IdHandler {
-    private static final String TAG = SvgToPath.TAG;;
+    private static final String TAG = SvgToPath.TAG;
 
-    HashMap<String, String> idXml = new HashMap<String, String>();
-    Stack<IdRecording> idRecordingStack = new Stack<IdRecording>();
+    final HashMap<String, String> idXml = new HashMap<String, String>();
+    private final Stack<IdRecording> idRecordingStack = new Stack<IdRecording>();
 
-    private XmlPullParser atts;
+    private final XmlPullParser atts;
 
     IdHandler(XmlPullParser atts) {
         this.atts = atts;
     }
 
     class IdRecording {
-        String id;
+        final String id;
         int level;
-        StringBuilder sb;
+        final StringBuilder sb;
 
         public IdRecording (String id) {
             this.id = id;
@@ -52,11 +53,7 @@ class IdHandler {
     }
 
 
-    /**
-     * @param namespaceURI  (unused)
-     * @param qName  (unused)
-     */
-    private void appendElementString (StringBuilder sb, String namespaceURI, String localName, String qName, XmlPullParser atts) {
+    private void appendElementString(StringBuilder sb, String localName, XmlPullParser atts) {
         sb.append("<");
         sb.append(localName);
         for (int i = 0; i < atts.getAttributeCount(); i++) {
@@ -69,7 +66,7 @@ class IdHandler {
         sb.append(">");
     }
 
-    public void startElement() {
+    void startElement() {
         String localName = atts.getName();
         String id = ParseUtil.getStringAttr("id", atts);
         if (id != null) {
@@ -79,11 +76,12 @@ class IdHandler {
         if (idRecordingStack.size() > 0){
             IdRecording ir = idRecordingStack.lastElement();
             ir.level++;
-            appendElementString(ir.sb, atts.getNamespace(), localName, atts.getName(), atts);
+            //appendElementString(ir.sb, atts.getNamespace(), localName, atts.getName(), atts);
+            appendElementString(ir.sb, localName, atts);
         }
     }
 
-    public void endElement() {
+    void endElement() {
         String localName = atts.getName();
         if (idRecordingStack.size() > 0){
             IdRecording ir = idRecordingStack.lastElement();

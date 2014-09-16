@@ -1,5 +1,6 @@
 package com.github.siyamed.shapeimageview.shader;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -13,6 +14,7 @@ public class BubbleShader extends ShaderHelper {
     private static final int DEFAULT_HEIGHT_DP = 10;
 
     private enum ArrowPosition {
+        @SuppressLint("RtlHardcoded")
         LEFT,
         RIGHT
     }

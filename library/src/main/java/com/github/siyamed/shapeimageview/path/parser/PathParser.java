@@ -4,9 +4,9 @@ import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.Log;
 
-public class PathParser {
+class PathParser {
 
-    private static final String TAG = SvgToPath.TAG;;
+    private static final String TAG = SvgToPath.TAG;
 
     /*
      * This is where the hard-to-parse paths are handled.
@@ -29,7 +29,7 @@ public class PathParser {
      */
     public static Path doPath(String s) {
         int n = s.length();
-        ParserHelper ph = new ParserHelper(s, 0);
+        ParserHelper ph = new ParserHelper(s);
         ph.skipWhitespace();
         Path p = new Path();
         float lastX = 0;
@@ -50,7 +50,7 @@ public class PathParser {
             } else if (cmd == 'm') { // implied command
                 cmd = 'l';
             } else { // implied command
-                // Log.d(TAG, "Implied command: " + cmd);
+                //ignore
             }
             p.computeBounds(r, true);
             // Log.d(TAG, "  " + cmd + " " + r);

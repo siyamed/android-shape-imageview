@@ -2,7 +2,8 @@ package com.github.siyamed.shapeimageview.path.parser;
 
 import org.xmlpull.v1.XmlPullParser;
 
-public class ParseUtil {
+@SuppressWarnings("FinalStaticMethod")
+class ParseUtil {
 
     static final String escape (String s) {
         return s
@@ -23,9 +24,8 @@ public class ParseUtil {
         return null;
     }
 
-    /**
+    /*
      * Some SVG unit conversions.  This is approximate
-     * @param dpi
      */
     static final Float convertUnits(String name, XmlPullParser atts, float dpi, float width, float height) {
         String value = getStringAttr(name, atts);
@@ -46,9 +46,9 @@ public class ParseUtil {
         } else if (value.endsWith("%")) {
             Float result = Float.valueOf(value.substring(0, value.length() - 1));
             float mult;
-            if (name.indexOf("x") >= 0 || name.equals("width") ) {
+            if (name.contains("x") || name.equals("width") ) {
                 mult = width / 100f;
-            } else if (name.indexOf("y") >= 0 || name.equals("height")) {
+            } else if (name.contains("y") || name.equals("height")) {
                 mult = height / 100f;
             } else {
                 mult = (height + width) / 2f;

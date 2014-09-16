@@ -12,6 +12,7 @@ import com.github.siyamed.shapeimageview.R;
 import com.github.siyamed.shapeimageview.path.SvgUtil;
 import com.github.siyamed.shapeimageview.path.parser.PathInfo;
 
+@SuppressWarnings("WeakerAccess")
 public class SvgShader extends ShaderHelper {
     public static final int BORDER_TYPE_DEFAULT = 0;
     public static final int BORDER_TYPE_FILL = 1;
@@ -26,11 +27,11 @@ public class SvgShader extends ShaderHelper {
     public static final int STROKE_JOIN_MITER = 1;
     public static final int STROKE_JOIN_ROUND= 2;
 
+    private final Path path = new Path();
+    private final Path borderPath = new Path();
+    private final Matrix pathMatrix = new Matrix();
+    private final float[] pathDimensions = new float[2];
     private PathInfo shapePath;
-    private Path path = new Path();
-    private Path borderPath = new Path();
-    private Matrix pathMatrix = new Matrix();
-    private float[] pathDimensions = new float[2];
     private int resId = -1;
     private int borderType = BORDER_TYPE_DEFAULT;
     private int strokeCap = STROKE_CAP_DEFAULT;
@@ -56,7 +57,7 @@ public class SvgShader extends ShaderHelper {
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
             resId = typedArray.getResourceId(R.styleable.ShaderImageView_shape, resId);
-            borderType = typedArray.getInt(R.styleable.ShaderImageView_shape, borderType);
+            borderType = typedArray.getInt(R.styleable.ShaderImageView_borderType, borderType);
             strokeCap = typedArray.getInt(R.styleable.ShaderImageView_strokeCap, strokeCap);
             strokeJoin = typedArray.getInt(R.styleable.ShaderImageView_strokeJoin, strokeJoin);
             strokeMiter = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_strokeMiter, strokeMiter);

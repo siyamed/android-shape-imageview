@@ -9,9 +9,10 @@ import android.widget.ImageView;
 
 import com.github.siyamed.shapeimageview.shader.ShaderHelper;
 
+@SuppressWarnings("WeakerAccess")
 public abstract class ShaderImageView extends ImageView {
 
-    protected final static boolean DEBUG = false;
+    private final static boolean DEBUG = false;
     private ShaderHelper pathHelper;
 
     public ShaderImageView(Context context) {
@@ -40,7 +41,7 @@ public abstract class ShaderImageView extends ImageView {
         return pathHelper;
     }
 
-    public abstract ShaderHelper createImageViewHelper();
+    protected abstract ShaderHelper createImageViewHelper();
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
