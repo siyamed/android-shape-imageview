@@ -1,4 +1,7 @@
-# Shape Image View [![](https://travis-ci.org/siyamed/android-shape-imageview.svg?branch=master)](https://travis-ci.org/siyamed/android-shape-imageview/)
+# Shape Image View 
+[![](http://img.shields.io/travis/siyamed/android-shape-imageview.svg?branch=master&&style=flat)](https://travis-ci.org/siyamed/android-shape-imageview/) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.siyamed/android-shape-imageview/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.siyamed/android-shape-imageview)
+
 Provides a set of custom shaped android imageview components, and a framework to define more shapes. Implements both **shader** and **bitmap mask** based image views. 
 
 * Shader based one uses *canvas draw methods* and *Path* construct, 
@@ -57,6 +60,7 @@ Attributes:
 * `borderColor` border color 
 * `borderWidth` border width in dp
 * `borderAlpha` alpha value of the border between 0.0-1.0
+* `radius` corner radius in dp
 * `square` set width and height to the minimum of the given values `true|false`
 
 ####CircularImageView
@@ -75,10 +79,20 @@ Attributes:
 * `borderWidth` border width in dp
 * `borderAlpha` alpha value of the border between 0.0-1.0
 
-####DiamondImageView
-![Android Diamond ImageView](images/small-diamond.png)
+####ShapeImageView
+
+| DiamondImageView                                       | PentagonImageView                                        | HexagonImageView                                         |
+| ------------------------------------------------------ | -------------------------------------------------------- | -------------------------------------------------------- |
+| ![Android Diamond ImageView](images/small-diamond.png) | ![Android Pentagon ImageView](images/small-pentagon.png) | ![Android Hexagon ImageView](images/small-hexagon.png)   |
+
+
+| OctogonImageView                                       | StarImageView                                            | HeartImageView                                       |
+| ------------------------------------------------------ | -------------------------------------------------------- | ---------------------------------------------------- |
+| ![Android Octogon ImageView](images/small-octogon.png) | ![Android Start ImageView](images/small-star.png)        | ![Android Heart ImageView](images/small-heart.png)   |
+
+
 ```XML
-<com.github.siyamed.shapeimageview.DiamondImageView
+<com.github.siyamed.shapeimageview.{Class Name}
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
@@ -87,81 +101,6 @@ Attributes:
     app:borderColor="@color/darkgray"/>
 ```
 
-[Attributes](#shader_attributes) 
-
-####PentagonImageView
-![Android Pentagon ImageView](images/small-pentagon.png)
-```XML
-<com.github.siyamed.shapeimageview.PentagonImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"/>
-```
-
-[Attributes](#shader_attributes) 
-
-####HexagonImageView
-![Android Hexagon ImageView](images/small-hexagon.png)
-```XML
-<com.github.siyamed.shapeimageview.HexagonImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"/>
-```
-
-[Attributes](#shader_attributes) 
-
-####OctogonImageView
-![Android Octogon ImageView](images/small-octogon.png)
-```XML
-<com.github.siyamed.shapeimageview.Octogon
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"/>
-```
-
-[Attributes](#shader_attributes) 
-
-####StarImageView
-![Android Start ImageView](images/small-star.png)
-```XML
-<com.github.siyamed.shapeimageview.StarImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"
-    app:strokeCap="round"
-    app:strokeJoin="round"/>
-```
-
-[Attributes](#shader_attributes) 
-
-####HeartImageView
-![Android Heart ImageView](images/small-heart.png)
-```XML
-<com.github.siyamed.shapeimageview.Heart
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"/>
-```
-
-[Attributes](#shader_attributes) 
-
-<a name="shader_attributes"></a>
 Attributes:
 * `borderColor` border color 
 * `borderWidth` border width in dp
@@ -226,4 +165,4 @@ If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstr
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks  
 * [geosolutions-it/mapsforge/svg-android](https://github.com/geosolutions-it/mapsforge/tree/master/svg-android): Used and modified to create a path from a svg file 
 
-[![Android Shape Image View on Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--shape--imageview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/932)
+[![Android Shape Image View on Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-android--shape--imageview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/932) [![Analytics](https://ga-beacon.appspot.com/UA-54885408-1/android-shape-imageview/home?pixel)](https://github.com/igrigorik/ga-beacon)
