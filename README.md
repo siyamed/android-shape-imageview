@@ -4,8 +4,22 @@
 
 Provides a set of custom shaped android imageview components, and a framework to define more shapes. Implements both **shader** and **bitmap mask** based image views. 
 
-* Shader based one uses *canvas draw methods* and *Path* construct, 
-* Mask based one uses xfermode to draw image on bitmaps defined by android shape XML's or resource bitmaps.
+[Shader]: http://developer.android.com/reference/android/graphics/BitmapShader.html
+[Path.addPath]: http://developer.android.com/reference/android/graphics/Path.html#addPath(android.graphics.Path)
+[Path]: http://developer.android.com/reference/android/graphics/Path.html
+[xfermode]: http://developer.android.com/reference/android/graphics/Xfermode.html
+[svg_location]: library/src/main/res/raw
+[svg_rectangle]: http://www.w3schools.com/svg/svg_rect.asp 
+[svg_circle]: http://www.w3schools.com/svg/svg_circle.asp 
+[svg_ellipse]: http://www.w3schools.com/svg/svg_ellipse.asp
+[svg_polygon]: http://www.w3schools.com/svg/svg_polygon.asp
+[svg_path]: http://www.w3schools.com/svg/svg_path.asp
+[svg_group]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+[svg_transformations]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+
+
+* [Shader][Shader] based one uses *canvas draw methods* and *[Path][Path]* class, 
+* Mask based one uses [xfermode][xfermode] to draw image on bitmaps defined by android shape XML's or resource bitmaps.
 
 <div>
 <a href="images/shader-buble.png" style="float:left;">
@@ -16,7 +30,8 @@ Provides a set of custom shaped android imageview components, and a framework to
 </a>
 </div>
 
-There are many projects online implementing such components, however one goal of this project is to provide a performant/smooth scrolling view component framework to define different shapes for imageviews. 
+There are many projects online implementing such components, however one goal of this project is to provide a 
+performant/smooth scrolling **image view component framework** to define different shapes for imageviews. 
 
 **For use with recycling view such as ListView or GridView please use shader based implementations.**
 
@@ -27,6 +42,7 @@ Gradle dependency:
 compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
 ```
 
+###Shader Based ImageView's
 ####BubbleImageView
 ![Android Bubble ImageView](images/small-bubble.png)
 ```XML
@@ -80,6 +96,11 @@ Attributes:
 * `borderAlpha` alpha value of the border between 0.0-1.0
 
 ####ShapeImageView
+This view has the capability to process a provided SVG file (for a limited set of SVG elements), build a 
+[Path][Path] object and draw it on the shader. The library includes SVG files defining a set of basic shapes and 
+ShapeImageView subclasses using those files. You can use whatever SVG you want to have a wonderful 
+and creatively shaped images in your application. The included SVG files are under [library/src/main/res/raw][svg_location]
+
 
 | DiamondImageView                                       | PentagonImageView                                        | HexagonImageView                                         |
 | ------------------------------------------------------ | -------------------------------------------------------- | -------------------------------------------------------- |
@@ -92,7 +113,7 @@ Attributes:
 
 
 ```XML
-<com.github.siyamed.shapeimageview.{Class Name}
+<com.github.siyamed.shapeimageview.{ClassName}
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
@@ -108,10 +129,18 @@ Attributes:
 * `strokeCap` border stroke cap type `butt|round|square`
 * `strokeJoin` border stroke join type `bevel|miter|round`
 * `square` set width and height to the minimum of the given values `true|false`
+* `shape` a reference to an SVG. This is used by ShapeImageView, not the subclasses of it. 
 
-####PorterShapeImageView
 
-This methods uses extra bitmaps for masks. Therefore it would be good to use them for very custom shapes, possiblynot in a recycling view. 
+SVG elements that are supported are: [rectangle][svg_rectangle], [circle][svg_circle], 
+[ellipse][svg_ellipse], [polygon][svg_polygon], [path][svg_path], [group][svg_group]. [Transformations][svg_transformations] on those elements are also supported. 
+
+The system converts an SVG file into a Path. For each element including the parent element `<svg>` a new Path is created, and all the children Path's are [added][Path.addPath] to their parent path. 
+
+###Bitmap Mask Based ImageViews 
+
+This view uses extra bitmaps for bitmap masks. Therefore it would be good to use them for very custom shapes, 
+possibly not in a recycling view. 
 
 * With [mask bitmap](sample/src/main/res/drawable/star.png): 
 
@@ -154,6 +183,8 @@ rounded rectangle shape definition in XML:
 Attributes:
 * `shape` the bitmap mask shape, either a shape drawable or a bitmap  
 * `square` set width and height to the minimum of the given values `true|false`
+
+This method reads a shape file (either bitmap or an android shape xml), creates a bitmap object using this shape, and finally combines the bitmap of the real image to be shown and the mast bitmap using xfermode. 
 
 ## Sample
 
