@@ -30,18 +30,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/shape_rounded_rectangle"
+                app:siShape="@drawable/shape_rounded_rectangle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/shape_circle"
+                app:siShape="@drawable/shape_circle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
         </LinearLayout>
 
@@ -64,27 +64,27 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/triangle"
+                app:siShape="@drawable/triangle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/octogon"
+                app:siShape="@drawable/octogon"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/star"
+                app:siShape="@drawable/star"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
         </LinearLayout>
 

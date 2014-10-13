@@ -7,4 +7,6 @@
     <color name="chat_box_border">#BBB</color>
     <color name="chat_box_bg">#EEE</color>
     <color name="green">#22AA22</color>
+    <color name="black">#000000</color>
+    <color name="selector">#55000000</color>
 </resources>

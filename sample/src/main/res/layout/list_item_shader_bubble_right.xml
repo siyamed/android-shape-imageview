@@ -7,10 +7,10 @@
         android:id="@+id/image"
         android:layout_width="50dp"
         android:layout_height="42dp"
-        app:triangleHeight="8dp"
+        app:siTriangleHeight="8dp"
         tools:src="@drawable/neo"
         android:layout_alignParentRight="true"
-        app:arrowPosition="left"/>
+        app:siArrowPosition="left"/>
 
     <TextView
         android:id="@+id/text"

@@ -12,10 +12,10 @@
         android:id="@+id/image"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        app:borderWidth="4dp"
-        app:borderAlpha="0.7"
-        app:borderColor="@color/bordercolor"
-        app:radius="8dp"
+        app:siBorderWidth="4dp"
+        app:siBorderAlpha="0.7"
+        app:siBorderColor="@color/bordercolor"
+        app:siRadius="8dp"
         android:alpha="1"/>
 
     <TextView

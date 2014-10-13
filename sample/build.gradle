@@ -8,7 +8,7 @@ android {
         applicationId "com.github.siyamed.shapeimageview.sample"
         minSdkVersion 9
         targetSdkVersion 19
-        versionCode 2
+        versionCode 3
         versionName "1.0"
     }
     buildTypes {
@@ -21,7 +21,7 @@ android {
 
 dependencies {
 //    compile project(':library')
-    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.2@aar'
     compile 'com.android.support:appcompat-v7:20.0.0'
     compile 'com.squareup.picasso:picasso:2.3.3'
     compile 'com.android.support:gridlayout-v7:20.0.0'

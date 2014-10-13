@@ -31,8 +31,8 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:src="@drawable/neo"
-                app:borderWidth="6dp"
-                app:borderColor="@color/darkgray"/>
+                app:siBorderWidth="6dp"
+                app:siBorderColor="@color/darkgray"/>
 
             <com.github.siyamed.shapeimageview.RoundedImageView
                 android:layout_width="match_parent"
@@ -40,10 +40,10 @@
                 android:layout_weight="1"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:radius="6dp"
-                app:borderWidth="6dp"
-                app:borderColor="@color/darkgray"
-                app:square="true"/>
+                app:siRadius="6dp"
+                app:siBorderWidth="6dp"
+                app:siBorderColor="@color/darkgray"
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.BubbleImageView
                 android:layout_width="match_parent"
@@ -51,8 +51,8 @@
                 android:layout_weight="1"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:square="true"
-                app:arrowPosition="right"/>
+                app:siSquare="true"
+                app:siArrowPosition="right"/>
 
         </LinearLayout>
 
@@ -74,27 +74,27 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/triangle"
+                app:siShape="@drawable/triangle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/octogon"
+                app:siShape="@drawable/octogon"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/star"
+                app:siShape="@drawable/star"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
         </LinearLayout>
 
@@ -116,18 +116,18 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/shape_rounded_rectangle"
+                app:siShape="@drawable/shape_rounded_rectangle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
             <com.github.siyamed.shapeimageview.mask.PorterShapeImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="8dp"
-                app:shape="@drawable/shape_circle"
+                app:siShape="@drawable/shape_circle"
                 android:src="@drawable/neo"
-                app:square="true"/>
+                app:siSquare="true"/>
 
         </LinearLayout>
 
@@ -141,8 +141,8 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
                 android:layout_gravity="center_horizontal"/>
 
             <com.github.siyamed.shapeimageview.PentagonImageView
@@ -150,8 +150,8 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
                 android:layout_gravity="center_horizontal"/>
 
             <com.github.siyamed.shapeimageview.HexagonImageView
@@ -159,8 +159,8 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
                 android:layout_gravity="center_horizontal"/>
 
             <com.github.siyamed.shapeimageview.OctogonImageView
@@ -168,8 +168,8 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
                 android:layout_gravity="center_horizontal"/>
 
             <com.github.siyamed.shapeimageview.HeartImageView
@@ -177,8 +177,8 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
                 android:layout_gravity="center_horizontal"/>
 
             <com.github.siyamed.shapeimageview.StarImageView
@@ -186,10 +186,10 @@
                 android:layout_height="250dp"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
-                app:borderWidth="8dp"
-                app:borderColor="@color/darkgray"
-                app:strokeCap="round"
-                app:strokeJoin="round"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
+                app:siStrokeCap="round"
+                app:siStrokeJoin="round"
                 android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
