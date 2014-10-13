@@ -16,7 +16,8 @@ Provides a set of custom shaped android imageview components, and a framework to
 [svg_path]: http://www.w3schools.com/svg/svg_path.asp
 [svg_group]: https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
 [svg_transformations]: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
-
+[sample_app_play_store]: https://play.google.com/store/apps/details?id=com.github.siyamed.shapeimageview.sample
+[youtube_video]: http://youtu.be/6fCkptmwxtQ
 
 * [Shader][Shader] based one uses *canvas draw methods* and *[Path][Path]* class, 
 * Mask based one uses [xfermode][xfermode] to draw image on bitmaps defined by android shape XML's or resource bitmaps.
@@ -34,6 +35,10 @@ There are many projects online implementing such components, however one goal of
 performant/smooth scrolling **image view component framework** to define different shapes for imageviews. 
 
 **For use with recycling view such as ListView or GridView please use shader based implementations.**
+
+[Sample app in play store][sample_app_play_store]
+
+[Youtube video][youtube_video]
 
 ## How to use
 
@@ -190,7 +195,9 @@ This method reads a shape file (either bitmap or an android shape xml), creates 
 
 See/execute the [sample](sample) for a demonstration of the components.
 
-If you are lazy check [this youtube video](http://youtu.be/6fCkptmwxtQ) demonstrating scrolling in the sample app
+If you are lazy check [this youtube video][youtube_video] demonstrating scrolling in the sample app
+
+You can download the [sample app from play store][sample_app_play_store] 
 
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks  
