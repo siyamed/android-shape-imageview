@@ -56,7 +56,7 @@ public abstract class PorterImageView extends ImageView {
     private void setup(Context context, AttributeSet attrs, int defStyle) {
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
-            square = typedArray.getBoolean(R.styleable.ShaderImageView_square, false);
+            square = typedArray.getBoolean(R.styleable.ShaderImageView_siSquare, false);
             typedArray.recycle();
         }
 

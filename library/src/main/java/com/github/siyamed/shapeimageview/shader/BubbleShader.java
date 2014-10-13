@@ -33,8 +33,8 @@ public class BubbleShader extends ShaderHelper {
         borderWidth = 0;
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
-            triangleHeightPx = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_triangleHeight, 0);
-            int arrowPositionInt = typedArray.getInt(R.styleable.ShaderImageView_arrowPosition, ArrowPosition.LEFT.ordinal());
+            triangleHeightPx = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_siTriangleHeight, 0);
+            int arrowPositionInt = typedArray.getInt(R.styleable.ShaderImageView_siArrowPosition, ArrowPosition.LEFT.ordinal());
             arrowPosition = ArrowPosition.values()[arrowPositionInt];
             typedArray.recycle();
         }

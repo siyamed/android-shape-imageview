@@ -26,7 +26,7 @@ public class RoundedShader extends ShaderHelper {
         borderPaint.setStrokeWidth(borderWidth*2);
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
-            radius = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_radius, radius);
+            radius = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_siRadius, radius);
             typedArray.recycle();
         }
     }

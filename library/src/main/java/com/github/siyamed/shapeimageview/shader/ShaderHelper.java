@@ -61,10 +61,10 @@ public abstract class ShaderHelper {
     public void init(Context context, AttributeSet attrs, int defStyle) {
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
-            borderColor = typedArray.getColor(R.styleable.ShaderImageView_borderColor, borderColor);
-            borderWidth = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_borderWidth, borderWidth);
-            borderAlpha = typedArray.getFloat(R.styleable.ShaderImageView_borderAlpha, borderAlpha);
-            square = typedArray.getBoolean(R.styleable.ShaderImageView_square, square);
+            borderColor = typedArray.getColor(R.styleable.ShaderImageView_siBorderColor, borderColor);
+            borderWidth = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_siBorderWidth, borderWidth);
+            borderAlpha = typedArray.getFloat(R.styleable.ShaderImageView_siBorderAlpha, borderAlpha);
+            square = typedArray.getBoolean(R.styleable.ShaderImageView_siSquare, square);
             typedArray.recycle();
         }
 

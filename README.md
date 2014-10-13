@@ -50,14 +50,14 @@ compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/neo"
-    app:arrowPosition="right"
-    app:square="true"/>
+    app:siArrowPosition="right"
+    app:siSquare="true"/>
 ```
 
 Attributes:
-* `triangleHeight` the height of the bubble pointer in dp  
-* `arrowPosition` where to point the arrow, currently `left|right`
-* `square` set width and height to the minimum of the given values `true|false`
+* `siTriangleHeight` the height of the bubble pointer in dp
+* `siArrowPosition` where to point the arrow, currently `left|right`
+* `siSquare` set width and height to the minimum of the given values `true|false`
 
 ####RoundedImageView
 ![Android Rounded Rectangle ImageView](images/small-rounded.png)
@@ -66,18 +66,18 @@ Attributes:
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/neo"
-    app:radius="6dp"
-    app:borderWidth="6dp"
-    app:borderColor="@color/darkgray"
-    app:square="true"/>
+    app:siRadius="6dp"
+    app:siBorderWidth="6dp"
+    app:siBorderColor="@color/darkgray"
+    app:siSquare="true"/>
 ```
 
 Attributes:
-* `borderColor` border color 
-* `borderWidth` border width in dp
-* `borderAlpha` alpha value of the border between 0.0-1.0
-* `radius` corner radius in dp
-* `square` set width and height to the minimum of the given values `true|false`
+* `siBorderColor` border color
+* `siBorderWidth` border width in dp
+* `siBorderAlpha` alpha value of the border between 0.0-1.0
+* `siRadius` corner radius in dp
+* `siSquare` set width and height to the minimum of the given values `true|false`
 
 ####CircularImageView
 ![Android Circular ImageView](images/small-circle.png)
@@ -86,14 +86,14 @@ Attributes:
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:src="@drawable/neo"
-    app:borderWidth="6dp"
-    app:borderColor="@color/darkgray"/>
+    app:siBorderWidth="6dp"
+    app:siBorderColor="@color/darkgray"/>
 ```
 
 Attributes:
-* `borderColor` border color 
-* `borderWidth` border width in dp
-* `borderAlpha` alpha value of the border between 0.0-1.0
+* `siBorderColor` border color
+* `siBorderWidth` border width in dp
+* `siBorderAlpha` alpha value of the border between 0.0-1.0
 
 ####ShapeImageView
 This view has the capability to process a provided SVG file (for a limited set of SVG elements), build a 
@@ -118,18 +118,18 @@ and creatively shaped images in your application. The included SVG files are und
     android:layout_height="match_parent"
     android:layout_margin="8dp"
     android:src="@drawable/neo"
-    app:borderWidth="8dp"
-    app:borderColor="@color/darkgray"/>
+    app:siBorderWidth="8dp"
+    app:siBorderColor="@color/darkgray"/>
 ```
 
 Attributes:
-* `borderColor` border color 
-* `borderWidth` border width in dp
-* `borderAlpha` alpha value of the border between 0.0-1.0
-* `strokeCap` border stroke cap type `butt|round|square`
-* `strokeJoin` border stroke join type `bevel|miter|round`
-* `square` set width and height to the minimum of the given values `true|false`
-* `shape` a reference to an SVG. This is used by ShapeImageView, not the subclasses of it. 
+* `siBorderColor` border color
+* `siBorderWidth` border width in dp
+* `siBorderAlpha` alpha value of the border between 0.0-1.0
+* `siStrokeCap` border stroke cap type `butt|round|square`
+* `siStrokeJoin` border stroke join type `bevel|miter|round`
+* `siSquare` set width and height to the minimum of the given values `true|false`
+* `siShape` a reference to an SVG. This is used by ShapeImageView, not the subclasses of it.
 
 
 SVG elements that are supported are: [rectangle][svg_rectangle], [circle][svg_circle], 
@@ -149,9 +149,9 @@ possibly not in a recycling view.
 <com.github.siyamed.shapeimageview.shape.PorterShapeImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:shape="@drawable/star"
+    app:siShape="@drawable/star"
     android:src="@drawable/neo"
-    app:square="true"/>
+    app:siSquare="true"/>
 ```
 
 * With [shape XML](sample/src/main/res/drawable/shape_rounded_rectangle.xml):
@@ -162,9 +162,9 @@ possibly not in a recycling view.
 <com.github.siyamed.shapeimageview.shape.PorterShapeImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:shape="@drawable/shape_rounded_rectangle"
+    app:siShape="@drawable/shape_rounded_rectangle"
     android:src="@drawable/neo"
-    app:square="true"/>
+    app:siSquare="true"/>
 ```
 
 rounded rectangle shape definition in XML: 
@@ -181,8 +181,8 @@ rounded rectangle shape definition in XML:
 ```
 
 Attributes:
-* `shape` the bitmap mask shape, either a shape drawable or a bitmap  
-* `square` set width and height to the minimum of the given values `true|false`
+* `siShape` the bitmap mask shape, either a shape drawable or a bitmap
+* `siSquare` set width and height to the minimum of the given values `true|false`
 
 This method reads a shape file (either bitmap or an android shape xml), creates a bitmap object using this shape, and finally combines the bitmap of the real image to be shown and the mast bitmap using xfermode. 
 

@@ -56,11 +56,11 @@ public class SvgShader extends ShaderHelper {
         super.init(context, attrs, defStyle);
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
-            resId = typedArray.getResourceId(R.styleable.ShaderImageView_shape, resId);
-            borderType = typedArray.getInt(R.styleable.ShaderImageView_borderType, borderType);
-            strokeCap = typedArray.getInt(R.styleable.ShaderImageView_strokeCap, strokeCap);
-            strokeJoin = typedArray.getInt(R.styleable.ShaderImageView_strokeJoin, strokeJoin);
-            strokeMiter = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_strokeMiter, strokeMiter);
+            resId = typedArray.getResourceId(R.styleable.ShaderImageView_siShape, resId);
+            borderType = typedArray.getInt(R.styleable.ShaderImageView_siBorderType, borderType);
+            strokeCap = typedArray.getInt(R.styleable.ShaderImageView_siStrokeCap, strokeCap);
+            strokeJoin = typedArray.getInt(R.styleable.ShaderImageView_siStrokeJoin, strokeJoin);
+            strokeMiter = typedArray.getDimensionPixelSize(R.styleable.ShaderImageView_siStrokeMiter, strokeMiter);
             typedArray.recycle();
         }
 
