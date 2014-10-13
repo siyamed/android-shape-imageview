@@ -14,7 +14,7 @@ branches:
 notifications:
   email: false
 
-script: './gradlew build'
+script: './gradlew clean build'
 
 env:
   global:
