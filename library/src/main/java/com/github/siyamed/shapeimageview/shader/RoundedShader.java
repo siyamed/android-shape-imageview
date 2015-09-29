@@ -61,4 +61,12 @@ public class RoundedShader extends ShaderHelper {
         imageRect.set(0,0,0,0);
         bitmapRadius = 0;
     }
+
+    public final int getRadius() {
+        return radius;
+    }
+
+    public final void setRadius(final int radius) {
+        this.radius = radius;
+    }
 }

@@ -53,4 +53,12 @@ public class CircleShader extends ShaderHelper {
         bitmapCenterX = 0;
         bitmapCenterY = 0;
     }
+
+    public final float getBorderRadius() {
+        return borderRadius;
+    }
+
+    public final void setBorderRadius(final float borderRadius) {
+        this.borderRadius = borderRadius;
+    }
 }

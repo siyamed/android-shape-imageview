@@ -13,7 +13,7 @@ import com.github.siyamed.shapeimageview.R;
 public class BubbleShader extends ShaderHelper {
     private static final int DEFAULT_HEIGHT_DP = 10;
 
-    private enum ArrowPosition {
+    public enum ArrowPosition {
         @SuppressLint("RtlHardcoded")
         LEFT,
         RIGHT
@@ -95,5 +95,21 @@ public class BubbleShader extends ShaderHelper {
     @Override
     public void reset() {
         path.reset();
+    }
+
+    public int getTriangleHeightPx() {
+        return triangleHeightPx;
+    }
+
+    public void setTriangleHeightPx(final int triangleHeightPx) {
+        this.triangleHeightPx = triangleHeightPx;
+    }
+
+    public ArrowPosition getArrowPosition() {
+        return arrowPosition;
+    }
+
+    public void setArrowPosition(final ArrowPosition arrowPosition) {
+        this.arrowPosition = arrowPosition;
     }
 }

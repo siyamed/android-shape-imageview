@@ -54,10 +54,6 @@ public abstract class ShaderHelper {
         return Math.round(dp * (displayMetrics.xdpi / DisplayMetrics.DENSITY_DEFAULT));
     }
 
-    public boolean isSquare() {
-        return square;
-    }
-
     public void init(Context context, AttributeSet attrs, int defStyle) {
         if(attrs != null){
             TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ShaderImageView, defStyle, 0);
@@ -156,5 +152,46 @@ public abstract class ShaderHelper {
         }
 
         return bitmap;
+    }
+
+    public final int getBorderColor() {
+        return borderColor;
+    }
+
+    public final void setBorderColor(final int borderColor) {
+        this.borderColor = borderColor;
+        if(borderPaint != null) {
+            borderPaint.setColor(borderColor);
+        }
+    }
+
+    public final int getBorderWidth() {
+        return borderWidth;
+    }
+
+    public final void setBorderWidth(final int borderWidth) {
+        this.borderWidth = borderWidth;
+        if(borderPaint != null) {
+            borderPaint.setStrokeWidth(borderWidth);
+        }
+    }
+
+    public final float getBorderAlpha() {
+        return borderAlpha;
+    }
+
+    public final void setBorderAlpha(final float borderAlpha) {
+        this.borderAlpha = borderAlpha;
+        if(borderPaint != null) {
+            borderPaint.setAlpha(Float.valueOf(borderAlpha * ALPHA_MAX).intValue());
+        }
+    }
+
+    public final void setSquare(final boolean square) {
+        this.square = square;
+    }
+
+    public final boolean isSquare() {
+        return square;
     }
 }

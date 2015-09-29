@@ -86,7 +86,33 @@ public abstract class ShaderImageView extends ImageView {
         if(!getPathHelper().onDraw(canvas)) {
             super.onDraw(canvas);
         }
-
     }
 
+    public void setBorderColor(final int borderColor) {
+        getPathHelper().setBorderColor(borderColor);
+        invalidate();
+    }
+
+    public int getBorderWidth() {
+        return getPathHelper().getBorderWidth();
+    }
+
+    public void setBorderWidth(final int borderWidth) {
+        getPathHelper().setBorderWidth(borderWidth);
+        invalidate();
+    }
+
+    public float getBorderAlpha() {
+        return getPathHelper().getBorderAlpha();
+    }
+
+    public void setBorderAlpha(final float borderAlpha) {
+        getPathHelper().setBorderAlpha(borderAlpha);
+        invalidate();
+    }
+
+    public void setSquare(final boolean square) {
+        getPathHelper().setSquare(square);
+        invalidate();
+    }
 }

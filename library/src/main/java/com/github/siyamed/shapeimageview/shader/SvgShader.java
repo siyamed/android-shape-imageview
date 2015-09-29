@@ -64,16 +64,19 @@ public class SvgShader extends ShaderHelper {
             typedArray.recycle();
         }
 
+        setShapeResId(context, resId);
+        setBorderType(borderType);
+        setStrokeCap(strokeCap);
+        setStrokeJoin(strokeJoin);
+        setStrokeMiter(strokeMiter);
+    }
+
+    public void setShapeResId(Context context, int resId) {
         if(resId != -1) {
             shapePath = SvgUtil.readSvg(context, resId);
         } else {
             throw new RuntimeException("No resource is defined as shape");
         }
-
-        setBorderType(borderType);
-        setStrokeCap(strokeCap);
-        setStrokeJoin(strokeJoin);
-        setStrokeMiter(strokeMiter);
     }
 
     public void setStrokeMiter(int strokeMiter) {
@@ -192,4 +195,6 @@ public class SvgShader extends ShaderHelper {
         path.reset();
         borderPath.reset();
     }
+
+
 }
