@@ -151,7 +151,7 @@ possibly not in a recycling view.
 
 ![Android Star Shape ImageView ](images/small-mask-star.png)
 ```XML
-<com.github.siyamed.shapeimageview.shape.PorterShapeImageView
+<com.github.siyamed.shapeimageview.mask.PorterShapeImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:siShape="@drawable/star"
@@ -164,7 +164,7 @@ possibly not in a recycling view.
 ![Android Star Shape ImageView ](images/small-xmlshape-rounded.png)
 
 ```XML
-<com.github.siyamed.shapeimageview.shape.PorterShapeImageView
+<com.github.siyamed.shapeimageview.mask.PorterShapeImageView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:siShape="@drawable/shape_rounded_rectangle"
