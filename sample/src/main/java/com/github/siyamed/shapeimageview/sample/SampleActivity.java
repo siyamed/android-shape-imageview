@@ -50,8 +50,11 @@ public class SampleActivity extends AppCompatActivity {
                     fragment = SampleFragment.newInstance(R.layout.fragment_shader_sample);
                     break;
                 case 5:
-                default:
                     fragment = SampleFragment.newInstance(R.layout.fragment_porter_sample);
+                    break;
+                case 6:
+                default:
+                    fragment = SampleFragment.newInstance(R.layout.fragment_relative_sample);
                     break;
             }
 
@@ -60,7 +63,7 @@ public class SampleActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 6;
+            return 7;
         }
 
         @Override
@@ -83,8 +86,11 @@ public class SampleActivity extends AppCompatActivity {
                     result = "Shaders";
                     break;
                 case 5:
-                default:
                     result = "Porter";
+                    break;
+                case 6:
+                default:
+                    result = "Relative";
                     break;
 
             }

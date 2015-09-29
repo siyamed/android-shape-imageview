@@ -12,6 +12,32 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.github.siyamed.shapeimageview.CircularImageView
+                android:id="@+id/relative_test_img_1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:src="@drawable/placeholder"
+                app:siBorderWidth="6dp"
+                app:siBorderColor="@color/darkgray"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Relative Layout"
+                android:layout_toRightOf="@id/relative_test_img_1"
+                android:layout_centerVertical="true"
+                android:includeFontPadding="false"/>
+
+        </RelativeLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -184,6 +210,17 @@
             <com.github.siyamed.shapeimageview.StarImageView
                 android:layout_width="250dp"
                 android:layout_height="250dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/neo"
+                app:siBorderWidth="8dp"
+                app:siBorderColor="@color/darkgray"
+                app:siStrokeCap="round"
+                app:siStrokeJoin="round"
+                android:layout_gravity="center_horizontal"/>
+
+            <com.github.siyamed.shapeimageview.StarImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:src="@drawable/neo"
                 app:siBorderWidth="8dp"

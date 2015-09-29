@@ -86,6 +86,7 @@ public abstract class ShaderHelper {
     }
 
     public void onSizeChanged(int width, int height) {
+        if(viewWidth == width && viewHeight == height) return;
         viewWidth = width;
         viewHeight = height;
         if(isSquare()) {

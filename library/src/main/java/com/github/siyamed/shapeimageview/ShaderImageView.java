@@ -45,12 +45,10 @@ public abstract class ShaderImageView extends ImageView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         if(getPathHelper().isSquare()) {
-            int width = getMeasuredWidth();
-            int height = getMeasuredHeight();
-            int dimen = Math.min(width, height);
-            setMeasuredDimension(dimen, dimen);
+            super.onMeasure(widthMeasureSpec, widthMeasureSpec);
+        } else {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         }
     }
 
