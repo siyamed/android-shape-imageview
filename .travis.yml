@@ -2,8 +2,8 @@ language: android
 
 android:
   components:
-  - build-tools-20.0.0
-  - android-19
+  - build-tools-23.0.1
+  - android-23
   licenses:
   - 'android-sdk-license.*'
 
@@ -27,3 +27,5 @@ addons:
       description: "Build submitted via Travis CI"
     build_command: "./gradlew clean build"
     branch_pattern: master
+
+sudo: false
