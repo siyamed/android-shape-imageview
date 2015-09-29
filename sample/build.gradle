@@ -1,13 +1,14 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.github.ben-manes.versions'
 
 android {
-    compileSdkVersion 20
-    buildToolsVersion "20.0.0"
+    compileSdkVersion Integer.parseInt(project.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.github.siyamed.shapeimageview.sample"
-        minSdkVersion 9
-        targetSdkVersion 20
+        minSdkVersion Integer.parseInt(project.ANDROID_BUILD_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
         versionCode 3
         versionName "1.0"
     }
@@ -20,11 +21,11 @@ android {
 }
 
 dependencies {
-//    compile project(':library')
-    compile 'com.github.siyamed:android-shape-imageview:0.9.2@aar'
-    compile 'com.android.support:appcompat-v7:20.0.0'
-    compile 'com.squareup.picasso:picasso:2.3.3'
-    compile 'com.android.support:gridlayout-v7:20.0.0'
-    compile 'com.android.support:support-v4:20.0.0'
+    compile project(':library')
+//    compile 'com.github.siyamed:android-shape-imageview:0.9.2@aar'
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:gridlayout-v7:23.0.1'
+    compile 'com.android.support:support-v4:23.0.1'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
 }
