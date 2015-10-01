@@ -1,5 +1,5 @@
 # Shape Image View 
-[![](http://img.shields.io/travis/siyamed/android-shape-imageview.svg?branch=master&&style=flat)](https://travis-ci.org/siyamed/android-shape-imageview/) 
+[![](https://travis-ci.org/siyamed/android-shape-imageview.svg?branch=master&style=flat)](https://travis-ci.org/siyamed/android-shape-imageview/) 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.siyamed/android-shape-imageview/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.github.siyamed/android-shape-imageview)
 
 Provides a set of custom shaped android imageview components, and a framework to define more shapes. Implements both **shader** and **bitmap mask** based image views. 
