@@ -199,6 +199,17 @@ If you are lazy check [this youtube video][youtube_video] demonstrating scrollin
 
 You can download the [sample app from play store][sample_app_play_store] 
 
+## Proguard
+
+```
+-dontwarn android.support.v7.**
+-keep class android.support.v7.** { ; }
+-keep interface android.support.v7.* { ; }
+-keepattributes *Annotation,Signature
+-dontwarn com.github.siyamed.**
+-keep class com.github.siyamed.shapeimageview.**{ *; }
+```
+
 ## References
 * [MostafaGazar/CustomShapeImageView](https://github.com/MostafaGazar/CustomShapeImageView): Used this project a basis for bitmap masks  
 * [geosolutions-it/mapsforge/svg-android](https://github.com/geosolutions-it/mapsforge/tree/master/svg-android): Used and modified to create a path from a svg file 
